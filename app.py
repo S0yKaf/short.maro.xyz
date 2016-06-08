@@ -36,31 +36,30 @@ def get_new_short_url():
 @app.route('/', methods=['POST'])
 def shorthen():
     req_url = request.get_json(force=True)['url']
-    
     url = Url.query.filter(Url.url == req_url).first()
-    
+
     if not url:
         scheme = urlparse(req_url).scheme
-        if not scheme: # check if url contains http://
+        if not scheme:  # check if url contains http://
             req_url = 'http://' + req_url
-        
+
         short_url = get_new_short_url()
         db_session.add(Url(req_url, short_url))
         db_session.commit()
     else:
-        short_url = url.short_url # I'm fucking sorry
-    
+        short_url = url.short_url  # I'm fucking sorry
+
     return jsonify(url=req_url, short_url=app.config['API_URL'] + short_url)
 
 
 @app.route('/<short_url>', methods=['GET'])
 def get_shorten_url(short_url):
-    
+
     short_url = Url.query.filter(Url.short_url == short_url).first()
     if not short_url:
         return 'The requested url does not exist.', 404
     else:
-        url = short_url.url # I'm sorry again
+        url = short_url.url   # I'm sorry again
         return redirect(url, code=302)
 
 
