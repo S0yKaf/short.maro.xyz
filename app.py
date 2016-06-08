@@ -4,6 +4,7 @@ import random
 from urllib.parse import urlparse
 
 from flask import Flask, request, jsonify, redirect
+from werkzeug.routing import Rule
 from database import db_session, init_db, init_engine
 from models import Url
 
@@ -36,13 +37,14 @@ def get_new_short_url():
 @app.route('/', methods=['POST'])
 def shorthen():
     req_url = request.get_json(force=True)['url']
+
+    scheme = urlparse(req_url).scheme
+    if not scheme:  # check if url contains http://
+        req_url = 'http://' + req_url
+
     url = Url.query.filter(Url.url == req_url).first()
 
     if not url:
-        scheme = urlparse(req_url).scheme
-        if not scheme:  # check if url contains http://
-            req_url = 'http://' + req_url
-
         short_url = get_new_short_url()
         db_session.add(Url(req_url, short_url))
         db_session.commit()
