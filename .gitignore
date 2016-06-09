@@ -1,2 +1,4 @@
 __pycache__/
 env/
+public/bower_components/
+node_modules/

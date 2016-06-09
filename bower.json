@@ -1,0 +1,21 @@
+{
+  "name": "short.maro.xyz",
+  "homepage": "https://github.com/Kiniamaro/short.maro.xyz",
+  "authors": [
+    "Kiniamaro <vdyotte@gmail.com>"
+  ],
+  "description": "url shortner for maro.xyz",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.9"
+  }
+}
