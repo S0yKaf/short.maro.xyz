@@ -5,6 +5,7 @@ Url Shortner for maro.xyz
 * Python3
 * Virtualenv (optional)
 * Pip3
+* Bower
 
 ## How to run
 
@@ -13,7 +14,8 @@ Url Shortner for maro.xyz
 * `$ . env/bin/activate`
 
 ### install requirements
-`$ pip3 install -r requirements.txt`
+* `$ pip3 install -r requirements.txt`
+* `$ bower install`
 
 ### Run
 `$ python3 app.py`
