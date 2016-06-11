@@ -1,3 +1,28 @@
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   background-color: #FAFAFA
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.col {
+  margin: .5em;
+  box-sizing:border-box;
+}
+
+.btn-large {
+  margin-top: .75em;
+}
+
+.footer-copyright {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.brand-logo {
+  margin-left: .5em;
 }

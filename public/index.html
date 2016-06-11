@@ -4,11 +4,12 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Short</title>
+  <title>s.maro.xyz</title>
   <meta name="description" content="maro.xyz url shortner">
   <meta name="author" content="vdyotte@gmail.com">
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/Materialize/bin/materialize.css" />
+  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
   <!-- endbower -->
 
   <link rel="stylesheet" href="/static/style.css">
@@ -16,11 +17,36 @@
 
 <body>
 
+  <nav>
+   <div class="nav-wrapper deep-orange">
+     <span class="brand-logo">s.maro.xyz</span>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+       <li><a href="https://maro.xyz">maro.xyz</a></li>
+     </ul>
+   </div>
+ </nav>
 
-<div ng-controller="IndexController" layout="column" layout-padding ng-app="App">
+ <main class="valign-wrapper">
 
-  <a class="waves-effect waves-light btn">button</a>
+  <div class="container center-align valign" ng-controller="IndexController" ng-app="App">
+    <div class="row">
+        <div class="input-field col s9 z-depth-1 hoverable">
+          <input placeholder="http://exemple.com" id="url" type="text" class="validate" ng-model="url">
+        </div>
+        <a class="waves-effect waves-light btn-large deep-orange lighten-1 col s2 z-depth-1 bottom-align" ng-click="shorten()">Shorten <i class="material-icons">mode_edit</i></a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="page-footer deep-orange">
+  <div class="containter">
+    <div class="footer-copyright deep-orange darken-2">
+    s.maro.xyz
+    <a class="grey-text text-lighten-4 right" href="https://github.com/Kiniamaro/short.maro.xyz"><i class="fa fa-github" aria-hidden="true"></i></a>
+  </div>
 </div>
+</footer>
 
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
