@@ -19,10 +19,17 @@ main {
 }
 
 .footer-copyright {
-  padding-left: .5em;
-  padding-right: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .brand-logo {
-  margin-left: .5em;
+  margin-left: 1em;
+}
+
+#waifu {
+  position: absolute;
+  bottom: 25px;
+  right: 0px;
+  z-index: -1;
 }
