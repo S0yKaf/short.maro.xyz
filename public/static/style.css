@@ -33,3 +33,11 @@ main {
   right: 0px;
   z-index: -1;
 }
+
+a {
+    color: #FDFDFD;
+}
+
+a:hover {
+    color: #ffd180;
+}
