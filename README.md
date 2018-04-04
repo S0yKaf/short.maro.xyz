@@ -1,5 +1,5 @@
 # short.maro.xyz
-Url Shortner for maro.xyz
+Url Shortener for maro.xyz
 
 ## Requirements
 * Python3
